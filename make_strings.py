@@ -50,7 +50,7 @@ if ((start_addr is not None and end_addr is not None) and (start_addr != BADADDR
 			else:
 				if ((byte in string_end) and (num_chars >= min_length)):
 					MakeUnknown(string_start, curr_addr - string_start, DOUNK_SIMPLE)
-					if (MakeStr(string_start, curr_addr) == 1):
+					if (create_strlit(string_start, curr_addr) == 1):
 						print "[make_strings.py] String created at 0x%x to 0x%x" % (string_start, curr_addr)
 						num_strings += 1
 						string_start = curr_addr
